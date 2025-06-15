@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let deal of deals">
+    {{ deal.name }} - {{ deal.value | currency }}
+    <button (click)="deleteDeal(deal.id)">Excluir</button>
+  </li>
+</ul>

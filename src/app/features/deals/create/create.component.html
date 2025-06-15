@@ -1,0 +1,29 @@
+<h2>Cadastrar Novo Negócio</h2>
+<a routerLink="/deals/create">Novo Negócio</a>
+<form [formGroup]="dealForm" (ngSubmit)="onSubmit()">
+  <label>
+    Nome:
+    <input formControlName="name" />
+  </label>
+  <br>
+  <label>
+    Valor:
+    <input formControlName="value" type="number" />
+  </label>
+  <br>
+  <label>
+    Descrição:
+    <input formControlName="description" />
+  </label>
+  <br>
+  <label>
+    Status:
+    <select formControlName="status">
+      <option value="open">Open</option>
+      <option value="won">Won</option>
+      <option value="lost">Lost</option>
+    </select>
+  </label>
+  <br>
+  <button type="submit" [disabled]="dealForm.invalid">Salvar</button>
+</form>
