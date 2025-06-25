@@ -1,0 +1,37 @@
+.crm-deals-create-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #182848 0%, #35507c 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+mat-card {
+  background: rgba(25, 42, 86, 0.97); /* Azul escuro soft com transparência */
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(24, 40, 72, 0.2);
+  border-radius: 18px;
+  width: 100%;
+  max-width: 420px;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  color: #fff;
+}
+
+mat-form-field {
+  margin-bottom: 18px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.button-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}

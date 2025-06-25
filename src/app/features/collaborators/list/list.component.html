@@ -1,1 +1,33 @@
-<p>list works!</p>
+<div class="crm-collaborators-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Colaboradores</mat-card-title>
+      <mat-card-subtitle>Equipe cadastrada no sistema</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let collaborator of pagedCollaborators">
+          <mat-icon mat-list-avatar>group</mat-icon>
+          <div class="collaborator-details">
+            <span class="collaborator-name">{{ collaborator.name }}</span>
+            <span class="collaborator-info">{{ collaborator.email }} &nbsp;|&nbsp; {{ collaborator.role }}</span>
+          </div>
+          <div class="button-bar">
+            <button mat-stroked-button color="primary">Editar</button>
+            <button mat-stroked-button color="warn">Remover</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <div *ngIf="!collaborators?.length" class="empty-state">
+        <mat-icon>group_off</mat-icon>
+        <p>Nenhum colaborador cadastrado ainda.</p>
+      </div>
+      <mat-paginator
+        [length]="collaborators.length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 20]"
+        (page)="onPageChange($event)">
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>

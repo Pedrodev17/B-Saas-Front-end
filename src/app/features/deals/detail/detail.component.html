@@ -1,1 +1,12 @@
-<p>detail works!</p>
+<h2>Detalhes do Negócio</h2>
+
+<div *ngIf="loading">Carregando...</div>
+<div *ngIf="notFound" style="color:red;">Negócio não encontrado.</div>
+
+<div *ngIf="deal && !loading">
+  <p><strong>Nome:</strong> {{ deal.name }}</p>
+  <p><strong>Valor:</strong> {{ deal.value | currency }}</p>
+  <p><strong>Status:</strong> {{ deal.status }}</p>
+  <p><strong>Descrição:</strong> {{ deal.description }}</p>
+  <button (click)="voltar()">Voltar</button>
+</div>

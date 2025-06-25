@@ -1,6 +1,34 @@
-<ul>
-  <li *ngFor="let deal of deals">
-    {{ deal.name }} - {{ deal.value | currency }}
-    <button (click)="deleteDeal(deal.id)">Excluir</button>
-  </li>
-</ul>
+<div class="crm-deals-list-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Negócios</mat-card-title>
+      <mat-card-subtitle>Todos os negócios cadastrados</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <a mat-stroked-button color="primary" [routerLink]="['/deals/create']" style="margin-bottom: 16px; display: inline-block;">
+        Novo Negócio
+      </a>
+      <mat-list>
+        <mat-list-item *ngFor="let deal of deals" class="deal-list-item">
+          <mat-icon mat-list-avatar>work</mat-icon>
+          <div class="deal-details">
+            <span class="deal-title">{{ deal.title }}</span>
+            <span class="deal-info">
+              Valor: R$ {{ deal.value | number:'1.2-2' }} &nbsp;|&nbsp;
+              Fase: {{ deal.stage }} &nbsp;|&nbsp;
+              Dono: {{ deal.owner }}
+            </span>
+          </div>
+          <div class="button-bar">
+            <button mat-stroked-button color="primary">Ver</button>
+            <button mat-stroked-button color="accent">Editar</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <div *ngIf="deals.length === 0" class="empty-state">
+        <mat-icon>work_off</mat-icon>
+        <p>Nenhum negócio cadastrado ainda.</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

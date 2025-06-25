@@ -1,1 +1,28 @@
-<p>list works!</p>
+<div class="crm-contacts-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Contatos</mat-card-title>
+      <mat-card-subtitle>Gerencie seus clientes e leads</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let contact of contacts">
+          <mat-icon mat-list-avatar>person</mat-icon>
+          <div class="contact-details">
+            <span class="contact-name">{{ contact.name }}</span>
+            <span class="contact-info">{{ contact.email }}</span>
+          </div>
+          <div class="button-bar">
+            <button mat-stroked-button color="primary">Editar</button>
+            <button mat-stroked-button color="warn">Excluir</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <!-- Caso não haja contatos -->
+      <div *ngIf="!contacts?.length" class="empty-state">
+        <mat-icon>group</mat-icon>
+        <p>Nenhum contato cadastrado ainda.</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

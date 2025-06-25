@@ -1,0 +1,76 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #131b2a 60%, #25304a 100%);
+  padding: 0;
+}
+
+.crm-contacts-container {
+  max-width: 900px;
+  margin: 48px auto;
+  padding: 0 20px 40px 20px;
+}
+
+mat-card {
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.18), 0 1.5px 8px rgba(25, 118, 210, 0.14);
+  background: #212b3b;
+  margin-bottom: 36px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+mat-card-header {
+  padding: 28px 32px 12px 32px;
+  background: #222e45;
+}
+mat-card-title {
+  font-size: 2.2rem;
+  color: #8ecaff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+mat-card-subtitle {
+  color: #b0b8c9;
+  font-size: 1.08rem;
+  margin-top: 6px;
+}
+mat-card-content {
+  padding: 0 32px 28px 32px;
+}
+.empty-state {
+  text-align: center;
+  color: #3a4a67;
+  margin: 36px 0 18px 0;
+  font-size: 1.13rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-state mat-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+  color: #4fc3f7;
+  background: #183056;
+  border-radius: 50%;
+}
+@media (max-width: 900px) {
+  .crm-contacts-container {
+    max-width: 100vw;
+    margin: 24px auto;
+    padding: 0 4vw 24px 4vw;
+  }
+  mat-card-header, mat-card-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (max-width: 600px) {
+  mat-card {
+    margin-bottom: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  }
+  mat-card-title {
+    font-size: 1.3rem;
+  }
+}

@@ -1,29 +1,37 @@
-<h2>Cadastrar Novo Negócio</h2>
-<a routerLink="/deals/create">Novo Negócio</a>
-<form [formGroup]="dealForm" (ngSubmit)="onSubmit()">
-  <label>
-    Nome:
-    <input formControlName="name" />
-  </label>
-  <br>
-  <label>
-    Valor:
-    <input formControlName="value" type="number" />
-  </label>
-  <br>
-  <label>
-    Descrição:
-    <input formControlName="description" />
-  </label>
-  <br>
-  <label>
-    Status:
-    <select formControlName="status">
-      <option value="open">Open</option>
-      <option value="won">Won</option>
-      <option value="lost">Lost</option>
-    </select>
-  </label>
-  <br>
-  <button type="submit" [disabled]="dealForm.invalid">Salvar</button>
-</form>
+<div class="crm-deals-create-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Novo Negócio</mat-card-title>
+      <mat-card-subtitle>Cadastre um novo negócio preenchendo os campos abaixo</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Título</mat-label>
+          <input matInput placeholder="Título do negócio" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Valor</mat-label>
+          <input matInput type="number" placeholder="Valor" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Fase</mat-label>
+          <mat-select required>
+            <mat-option value="Contato Inicial">Contato Inicial</mat-option>
+            <mat-option value="Proposta">Proposta</mat-option>
+            <mat-option value="Negociação">Negociação</mat-option>
+            <mat-option value="Fechado">Fechado</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Dono</mat-label>
+          <input matInput placeholder="Nome do dono" required>
+        </mat-form-field>
+        <div class="button-bar">
+          <button mat-raised-button color="primary" type="submit">Salvar</button>
+          <button mat-stroked-button color="warn" routerLink="/deals/list" type="button">Cancelar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

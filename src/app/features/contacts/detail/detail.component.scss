@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  padding: 24px;
+  background: #fffbe7;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(255, 193, 7, .15);
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+h2 {
+  color: #ff9800;
+  margin-bottom: 14px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+
+  label {
+    font-weight: bold;
+    color: #333;
+  }
+
+  span {
+    color: #555;
+  }
+}

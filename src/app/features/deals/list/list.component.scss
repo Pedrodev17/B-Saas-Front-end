@@ -1,0 +1,122 @@
+.crm-deals-list-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #273043 0%, #303C55 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+mat-card {
+  background: #364156;
+  color: #f5f6fa;
+  box-shadow: 0 4px 24px rgba(39, 48, 67, 0.12);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+  padding: 32px 36px 36px 36px;
+}
+
+mat-card-title {
+  color: #fff;
+  font-size: 2.1rem;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+mat-card-subtitle {
+  color: #bfc9d6;
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.novo-negocio-btn {
+  margin-bottom: 26px;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+mat-list {
+  background: transparent;
+}
+
+.deal-list-item {
+  background: #2f3a4c;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  padding: 18px 14px;
+  color: #f5f6fa;
+  box-shadow: 0 2px 8px 0 rgba(39,48,67,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deal-details {
+  flex: 1;
+}
+
+.deal-title {
+  font-weight: 700;
+  font-size: 1.14rem;
+  color: #80bfff;
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.deal-info {
+  font-size: 1rem;
+  color: #d9e3ea;
+}
+
+.button-bar {
+  display: flex;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+/* Avatar icon */
+mat-icon[mat-list-avatar] {
+  background: #1d2533;
+  border-radius: 50%;
+  color: #80bfff;
+  font-size: 2rem;
+  padding: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 36px;
+
+  mat-icon {
+    font-size: 3rem;
+    color: #80bfff;
+    margin-bottom: 8px;
+  }
+  p {
+    color: #fff;
+    opacity: 0.85;
+    font-size: 1.1rem;
+  }
+}
+
+/* Botões Material em fundo escuro */
+.mat-stroked-button, .mat-raised-button {
+  color: #80bfff !important;
+  border-color: #80bfff !important;
+  background-color: transparent !important;
+}
+.mat-stroked-button.mat-accent, .mat-raised-button.mat-accent {
+  color: #ffd666 !important;
+  border-color: #ffd666 !important;
+}
+.mat-stroked-button.mat-primary, .mat-raised-button.mat-primary {
+  color: #80bfff !important;
+  border-color: #80bfff !important;
+}
+.mat-stroked-button.mat-warn, .mat-raised-button.mat-warn {
+  color: #ff9090 !important;
+  border-color: #ff9090 !important;
+}

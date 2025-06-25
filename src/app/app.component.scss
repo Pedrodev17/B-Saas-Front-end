@@ -1,0 +1,60 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, #273043 0%, #303C55 100%) !important;
+  min-height: 100vh;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+.crm-navbar {
+  width: 100vw;
+  min-width: 100vw;
+  background: linear-gradient(90deg, #313e5b 0%, #3a4662 100%);
+  box-shadow: 0 2px 12px rgba(44, 54, 80, 0.10), 0 1.5px 0 0 #253054;
+  padding: 0 38px;
+  border-radius: 0 0 18px 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 62px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.crm-navbar a {
+  color: #c7d8f7;
+  font-size: 1.13rem;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+  letter-spacing: 0.3px;
+  position: relative;
+  top: 2px;
+}
+
+.crm-navbar a.active,
+.crm-navbar a:hover {
+  background: #22305a;
+  color: #80bfff;
+  box-shadow: 0 2px 8px rgba(44, 54, 80, 0.08);
+}
+
+/* Garante que o conteúdo não fique escondido atrás da navbar fixa */
+.main-content, .crm-main-container, .crm-deals-list-container, .crm-users-list-container {
+  margin-top: 74px; /* altura da navbar + espaçamento extra para não colar */
+  padding-top: 0;
+}
+
+router-outlet {
+  display: block;
+  background: transparent !important;
+}

@@ -1,39 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DealService } from '../../../services/deal.service';
-import { Deal } from '../../../models/deal.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-deal-create',
+  selector: 'app-deals-create',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './create.component.html'
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    FormsModule
+  ],
+  templateUrl: './create.component.html',
+  styleUrl: './create.component.scss'
 })
-export class CreateComponent {
-  dealForm: FormGroup;
-
-  constructor(
-    private fb: FormBuilder,
-    private dealService: DealService
-  ) {
-    this.dealForm = this.fb.group({
-      name: ['', Validators.required],
-      value: [0, Validators.required],
-      description: [''],
-      status: ['open', Validators.required]
-    });
-  }
-
-  onSubmit() {
-    if (this.dealForm.valid) {
-      this.dealService.create(this.dealForm.value).subscribe({
-        next: (deal) => {
-          alert('Negócio cadastrado com sucesso!');
-          this.dealForm.reset();
-        },
-        error: () => alert('Erro ao cadastrar negócio')
-      });
-    }
-  }
-}
+export class CreateComponent {}

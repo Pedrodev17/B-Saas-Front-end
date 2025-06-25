@@ -1,1 +1,33 @@
-<p>list works!</p>
+<div class="crm-users-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Usuários</mat-card-title>
+      <mat-card-subtitle>Lista de usuários cadastrados no sistema</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let user of pagedUsers">
+          <mat-icon mat-list-avatar>person</mat-icon>
+          <div class="user-details">
+            <span class="user-name">{{ user.name }}</span>
+            <span class="user-info">{{ user.email }}</span>
+          </div>
+          <div class="button-bar">
+            <button mat-stroked-button color="primary">Editar</button>
+            <button mat-stroked-button color="warn">Excluir</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <div *ngIf="!users?.length" class="empty-state">
+        <mat-icon>group</mat-icon>
+        <p>Nenhum usuário cadastrado ainda.</p>
+      </div>
+      <mat-paginator
+        [length]="users.length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 20]"
+        (page)="onPageChange($event)">
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>

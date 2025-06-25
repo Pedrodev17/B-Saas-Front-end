@@ -1,26 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // <-- Importa o CommonModule para usar diretivas como ngFor, ngIf, etc.
-import { DealService } from '../../../services/deal.service';
-import { Deal } from '../../../models/deal.model';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-deals-list',
   standalone: true,
-  imports: [CommonModule], // <-- Adicione aqui!
-  templateUrl: './list.component.html'
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    RouterModule
+  ],
+  templateUrl: './list.component.html',
+  styleUrl: './list.component.scss'
 })
-export class ListComponent implements OnInit {
-  deals: Deal[] = [];
-
-  constructor(private dealService: DealService) {}
-
-  ngOnInit() {
-    this.dealService.getAll().subscribe(data => this.deals = data);
-  }
-
-  deleteDeal(id: number) {
-    this.dealService.delete(id).subscribe(() => {
-      this.deals = this.deals.filter(deal => deal.id !== id);
-    });
-  }
+export class DealsListComponent {
+  deals = [
+    { title: 'Negócio A', value: 10000, stage: 'Proposta', owner: 'Pedro' },
+    { title: 'Negócio B', value: 8000, stage: 'Contato Inicial', owner: 'Maria' },
+    // ...adicione mais negócios
+  ];
 }

@@ -1,1 +1,39 @@
-<p>edit works!</p>
+<h2>Editar Negócio</h2>
+
+
+<div *ngIf="loading">Carregando...</div>
+<div *ngIf="notFound" style="color:red;">Negócio não encontrado.</div>
+
+<form *ngIf="!loading && !notFound" [formGroup]="dealForm" (ngSubmit)="onSubmit()">
+  <label>
+    Nome:
+    <input formControlName="name" />
+  </label>
+  <div *ngIf="dealForm.get('name')?.invalid && dealForm.get('name')?.touched" style="color:red;">
+    Nome é obrigatório.
+  </div>
+  <br>
+  <label>
+    Valor:
+    <input formControlName="value" type="number" />
+  </label>
+  <div *ngIf="dealForm.get('value')?.invalid && dealForm.get('value')?.touched" style="color:red;">
+    Valor deve ser maior ou igual a 0.
+  </div>
+  <br>
+  <label>
+    Descrição:
+    <input formControlName="description" />
+  </label>
+  <br>
+  <label>
+    Status:
+    <select formControlName="status">
+      <option value="open">Aberto</option>
+      <option value="won">Ganho</option>
+      <option value="lost">Perdido</option>
+    </select>
+  </label>
+  <br>
+  <button type="submit" [disabled]="dealForm.invalid">Salvar alterações</button>
+</form>

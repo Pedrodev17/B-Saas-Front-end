@@ -5,7 +5,7 @@ import { Deal } from '../models/deal.model';
 
 @Injectable({ providedIn: 'root' })
 export class DealService {
-  private apiUrl = 'https://sua-api.com/deals'; // ajuste para sua API
+  private apiUrl = 'http://localhost:4200/'; // ajuste para sua API
 
   constructor(private http: HttpClient) {}
 
